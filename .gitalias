@@ -1,0 +1,95 @@
+[alias]
+  # General
+  st = status -sb     # Short status with branch info
+  a  = add --all      # Add, Remove, and Delete files into/from staging
+  ap = add --patch    # add by patch - looks at each change, and asks if we want to put it in the repo.
+  c  = commit -m      # Commit with message
+  ac = "!git add -A && git commit -m "
+  p  = push           # Push 
+  co = checkout       # Checkout a branch
+  f  = fetch --prune  # Fetch from a repository and prune any remote-tracking references that no longer exist on the remote.
+  b  = checkout -b    # Checkout a new not yet existing branch
+  ba = branch -a      # List both remote-tracking branches and local branches.
+  bd = branch -d      # Delete a branch only if it has been merged
+  bD = branch -D      # Force delete a branch
+  
+  dc = diff --cached  # show changes not yet staged 
+  ds = diff --staged  # show changes about to be committed
+  g  = grep           # search for text
+  gl = grep -n        # grep - show line number
+
+  # clean everything to be pristine
+  nuke = clean -ffdx
+
+  # Cherry-pick
+  # apply the changes introduced by some existing commits; useful for moving small chunks of code between branches.
+  cp = cherry-pick 
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+
+  # Edit branch description
+  be = branch --edit-description 
+
+  # Remote Information
+  ri = remote show origin
+
+  # Create new branch
+  spawn = !sh -c 'git checkout -b $1 $2 && git config branch.$1.localmerge $2' - 
+
+  # update current branch from remote branch
+  update = !sh -c 'git fetch origin && git rebase -p origin/$1' - 
+
+  # interactive rebase
+  ir = !sh -c 'git rebase -i $1' -  
+
+  # commit - amend the tip of the current branch rather than creating a new commit.
+  ca = commit --amend
+
+  # commit - amend the tip of the current branch, and edit the message.
+  cam = commit --amend --message
+
+  # commit - amend the tip of the current branch, and do not edit the message.
+  cane = commit --amend --no-edit
+  
+  uncommit = reset --soft HEAD~1
+  cleanout = !git clean -df && git checkout -- .
+
+  # Comparing
+  dc  = diff --cached  # Display the staged changes
+  dd = diff --check --dirstat --find-copies --find-renames --histogram --color
+  ours   = !"f() { git checkout --ours $@ && git add $@; }; f"
+  theirs = !"f() { git checkout --theirs $@ && git add $@; }; f"
+  incoming = !git remote update --prune; git log ..@{upstream}
+  outgoing = log @{upstream}..
+
+  # Back up 
+  snapshot = !git stash push "snapshot: $(date)" && git stash apply "stash@{0}"
+  archive = !"f() { top=$(rev-parse --show-toplevel); cd $top; tar cvf $top.tar $top ; }; f"
+
+  # Logging
+  plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+  ll = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
+  all = log --pretty=oneline --abbrev-commit --all --no-merges # all commits that aren't merged 
+  today = !git all --since='12am' --committer=\"`git me`\" # Today only for me 
+  log-graph = log --graph --all  --decorate --oneline
+  log-my-week = !git log --author $(git config user.email) --since "1 week ago"
+
+  # Stats
+  rank = shortlog -sn --no-merges
+  rso = remote show origin
+  me = config user.name
+
+  # Cleanup
+  bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+
+  # Other
+  mav = !afplay ~/Music/Danger\\ Zone.mp3 & LASTPID=$! \ngit rebase -i $1 \nkill -9 $LASTPID\n true
+
+[core]
+	autocrlf = input
+	ignorecase = false
+	whitespace = cr-at-eol
+	editor = vim
+	pager = less -x4
