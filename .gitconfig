@@ -27,7 +27,7 @@
 	pb = "push origin HEAD"
 
 	# add and commit with message
-	ac = "add -A && commit -m"
+	ac = "!git add -A && git commit -m"
 
 	# create a new branch
 	spawn = "!sh -c 'git checkout -b $1 $2 && git config branch.$1.localmerge $2' -"
