@@ -36,12 +36,14 @@ alias du='du -ch'
 
 # Task warrior
 alias t="task"
+alias tp='_tp() { task pro:$1; }; _tp'
 alias th="task pro:hzmt"
 alias tha="task add pro:hzmt"
 alias td="task done"
 alias tm="task mod"
 alias tns="task pro:ns"
 alias tnsa="task add pro:ns"
+alias ta="task annotate"
 
 # Sudo
 # if user is not root, pass all commands via sudo #
