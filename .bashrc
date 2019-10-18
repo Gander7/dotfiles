@@ -35,6 +35,7 @@ alias df='df -H'
 alias du='du -ch'
 
 # Task warrior
+alias t="task"
 alias th="task pro:hzmt"
 alias tha="task add pro:hzmt"
 alias td="task done"
@@ -44,7 +45,7 @@ alias tm="task mod"
 # if user is not root, pass all commands via sudo #
 if [ $UID -ne 0 ]; then
 	alias reboot='sudo reboot'
-	alias get='sudo apt-get'
+	alias get='sudo apt-get install'
 	alias update='sudo apt-get update'
 	alias upgrade='sudo apt-get upgrade'
 fi
@@ -73,3 +74,5 @@ if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 
 # Show auto-completion list automatically, without double tab
 if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
+
+PATH="/home/tony/.npm-global/bin:$PATH"
