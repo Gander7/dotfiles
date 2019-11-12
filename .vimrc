@@ -1,9 +1,15 @@
 filetype plugin indent on
 set encoding=utf-8
+set fileencoding=utf-8
 
 set clipboard=unnamedplus 	" share clipboard
 set number 			" show line numbers
 set cursorline 			" highlight line with cursor
+set autoindent			" copy indent when using o/O
+set smartindent			" vim tries to match indents
+set hlsearch			" highlight all results from search
+set ignorecase			" ignore case in searches
+set smartcase			" except when capitals are involved
 
 set ttyfast 		" Faster rendering
 set laststatus=2 	" Always show status line
@@ -17,9 +23,12 @@ set undodir=~/.vim/undodir
 """""""""""""""""""""""""""""""""""""""""""
 " Remaps 
 """""""""""""""""""""""""""""""""""""""""""
-inoremap jk <ESC>
 let mapleader="/"
+" Don't move to escape
+inoremap jk <ESC>
+" Search for file
 nnoremap ; :Files<CR>
+" Toggle project directory
 nnoremap <C-p> :NERDTreeToggle<CR>
 " Go to next/prev tab
 nnoremap <Tab> gt
