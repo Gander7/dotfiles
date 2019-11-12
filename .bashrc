@@ -44,6 +44,10 @@ alias tm="task mod"
 alias tnsa="task add pro:ns"
 alias ta="task annotate"
 
+# Cargo
+alias cwc="cargo watch -x check"
+alias cwt="cargo watch -x test"
+
 # Sudo
 # if user is not root, pass all commands via sudo #
 if [ $UID -ne 0 ]; then
