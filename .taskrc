@@ -17,20 +17,53 @@ data.location=~/.task
 #include /usr/share/taskwarrior/light-16.theme
 #include /usr/share/taskwarrior/light-256.theme
 #include /usr/share/taskwarrior/dark-16.theme
-#include /usr/share/taskwarrior/dark-256.theme
+include /usr/share/taskwarrior/dark-256.theme
 #include /usr/share/taskwarrior/dark-red-256.theme
 #include /usr/share/taskwarrior/dark-green-256.theme
 #include /usr/share/taskwarrior/dark-blue-256.theme
 #include /usr/share/taskwarrior/dark-violets-256.theme
-include /usr/share/taskwarrior/dark-yellow-green.theme
+#include /usr/share/taskwarrior/dark-yellow-green.theme
 #include /usr/share/taskwarrior/dark-gray-256.theme
 #include /usr/share/taskwarrior/dark-gray-blue-256.theme
 #include /usr/share/taskwarrior/solarized-dark-256.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
 
+# General Config
+journal.info=no # Don't show changelog when displaying task info
+journal.time=yes # Log starting and stopping on task
+urgency.user.tag.later.coefficient=-6.0 # later = bottom of the list
+weekstart=monday
+
+# Ready Config
+report.next.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.countdown,until.remaining,description.count,urgency
+report.next.labels=ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Description,Urg
+
+# User Defined Attributes
+# Size/Weight
 uda.size.type=numeric
 uda.size.label=Size
 uda.size.values=1,2,3,5,8,13,20,40
-journal.time=yes
-urgency.user.tag.later.coefficient=-6.0
+
+# Projects
+urgency.user.project.routine.coefficient=13
+urgency.user.project.hz.coefficient=13
+urgency.user.project.rtd.coefficient=11
+urgency.user.project.pers.coefficient=9
+urgency.user.project.rst.coefficient=7
+urgency.user.project.ns.coefficient=5
+urgency.user.project.tw.coefficient=3
+urgency.user.project.bg.coefficient=1
+
+# Aliases
+alias.shortpunt=modify wait:3h
+alias.pung=modify wait:1d
+alias.longpunt=modify wait:1w
+
+# Syncing
+taskd.server=freecinc.com:53589
+taskd.certifice=\/home\/tony\/.task\/freecinc_72fc96a9.key.pem
+taskd.ca=\/home\/tony\/.task\/freecinc_72fc96a9.ca.pem
+taskd.credentials=FreeCinc\/freecinc_72fc96a9\/0d2dbd26-f9f0-49f5-bae5-870a353d07ae
+taskd.key=\/home\/tony\/.task\/freecinc_72fc96a9.key.pem
+taskd.certificate=\/home\/tony\/.task\/freecinc_72fc96a9.cert.pem

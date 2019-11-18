@@ -2,7 +2,7 @@ filetype plugin indent on
 set encoding=utf-8
 set fileencoding=utf-8
 
-set clipboard=unnamedplus 	" share clipboard
+set clipboard=unnamed	 	" share clipboard
 set number 			" show line numbers
 set cursorline 			" highlight line with cursor
 set autoindent			" copy indent when using o/O
@@ -23,7 +23,7 @@ set undodir=~/.vim/undodir
 """""""""""""""""""""""""""""""""""""""""""
 " Remaps 
 """""""""""""""""""""""""""""""""""""""""""
-let mapleader="/"
+let mapleader="\\"
 " Don't move to escape
 inoremap jk <ESC>
 " Search for file
@@ -70,19 +70,25 @@ Plug 'itchyny/lightline.vim' " Status bar
 Plug 'junegunn/seoul256.vim' " Possible theme
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File Search
 Plug 'junegunn/fzf.vim' " File search, part of above line
-"Plug 'kristijanhusak/vim-carbon-sh' " Not working, Github issue 7
 Plug 'mattn/emmet-vim' " Emmet for vim (HTML files)
 Plug 'OmniSharp/omnisharp-vim' " C# for vim
 Plug 'racer-rust/vim-racer' " Rust code completion + navigation
 Plug 'rust-lang/rust.vim' " Rust file detection, synxtax highlighting, and formatting
 Plug 'scrooloose/nerdtree' " sidebar file search
+Plug 'segeljakt/vim-silicon' " take pictures of code
+Plug 'TaDaa/vimade' " Fades inactive splits
 Plug 'tomasiser/vim-code-dark' "possible theme
 Plug 'tpope/vim-sensible' " default settings everyone can agree on
 Plug 'tpope/vim-surround' " working with paren, brackets, tags, etc
 Plug 'terryma/vim-multiple-cursors' " name says it all
+Plug 'vitalk/vim-simple-todo'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" html syntax to dotnet razor files
+autocmd BufNewFile,BufRead *.cshtml set syntax=html
+autocmd BufNewFile,BufRead *.razor set syntax=html
 
 " Theme Config
 syntax on
