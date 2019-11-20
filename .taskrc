@@ -58,7 +58,7 @@ urgency.user.project.bg.coefficient=1
 # Aliases
 alias.tap=modify wait:45mins
 alias.shortpunt=modify wait:3h
-alias.punt=modify wait:1d
+alias.punt=modify wait:tomorrow
 alias.longpunt=modify wait:1w
 
 # Syncing
