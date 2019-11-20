@@ -31,6 +31,7 @@
 
 	# create a new branch
 	spawn = "!sh -c 'git checkout -b $1 $2 && git config branch.$1.localmerge $2' -"
+	clean-branches = "!git co dev && git branch --merged | grep -v '\\*' | grep -v master | xargs -n 1 git branch -d"
 
 	# Log that shows titles of last 16 commits
 	l = "log -16 --color=always --all --topo-order --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
