@@ -81,6 +81,7 @@ Plug 'tpope/vim-surround' " working with paren, brackets, tags, etc
 Plug 'terryma/vim-multiple-cursors' " name says it all
 Plug 'vitalk/vim-simple-todo'
 Plug 'christophermca/meta5'
+Plug 'jiangmiao/auto-pairs'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
