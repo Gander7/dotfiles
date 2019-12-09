@@ -45,6 +45,11 @@ uda.size.type=numeric
 uda.size.label=Size
 uda.size.values=1,2,3,5,8,13,20,40
 
+# Tags
+urgency.user.tag.cln.coefficient=-1
+urgency.due.coefficient=25 # Default: 12
+urgency.blocked.coefficient=-30 # Default: -5
+
 # Projects
 urgency.user.project.routine.coefficient=13
 urgency.user.project.hz.coefficient=13
@@ -62,9 +67,9 @@ alias.punt=modify wait:tomorrow
 alias.longpunt=modify wait:1w
 
 # Syncing
-taskd.server=freecinc.com:53589
-taskd.certifice=\/home\/tony\/.task\/freecinc_72fc96a9.key.pem
-taskd.ca=\/home\/tony\/.task\/freecinc_72fc96a9.ca.pem
-taskd.credentials=FreeCinc\/freecinc_72fc96a9\/0d2dbd26-f9f0-49f5-bae5-870a353d07ae
-taskd.key=\/home\/tony\/.task\/freecinc_72fc96a9.key.pem
-taskd.certificate=\/home\/tony\/.task\/freecinc_72fc96a9.cert.pem
+taskd.certificate=/home/tony/.task/certs/private.certificate.pem
+taskd.key=/home/tony/.task/certs/private.key.pem
+taskd.ca=/home/tony/.task/certs/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/zachjallen/bf747140-57d4-480a-ac30-4faa0871802f
+taskd.trust=ignore hostname
