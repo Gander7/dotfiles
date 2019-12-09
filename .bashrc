@@ -82,13 +82,10 @@ if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 # Show auto-completion list automatically, without double tab
 if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 
-# Change prompt
-parse_git_branch() {
-	     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-     }
-export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+# Update PS1
+source ~/.bash_ps1
 
-# Update PATH
+ #Update PATH
 PATH="/home/tony/.npm-global/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
