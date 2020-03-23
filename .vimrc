@@ -75,7 +75,7 @@ Plug 'racer-rust/vim-racer' " Rust code completion + navigation
 Plug 'rust-lang/rust.vim' " Rust file detection, synxtax highlighting, and formatting
 Plug 'scrooloose/nerdtree' " sidebar file search
 Plug 'segeljakt/vim-silicon' " take pictures of code
-Plug 'TaDaa/vimade' " Fades inactive splits
+"Plug 'TaDaa/vimade' " Fades inactive splits
 Plug 'tpope/vim-sensible' " default settings everyone can agree on
 Plug 'tpope/vim-surround' " working with paren, brackets, tags, etc
 Plug 'terryma/vim-multiple-cursors' " name says it all
