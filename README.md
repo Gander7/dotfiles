@@ -7,7 +7,8 @@ Personal config files to be used across computers and for new installs
 
 ## Installation
 1. Clone Repo
-2. For each file you want to include, in your `~`:
+2. Back up any existing config files
+3. For each file you want to include, in your `~`:
   `ln -s ABSOULTE_PATH_TO_REPO/FILENAME`
   
 ## Issues I've faced
