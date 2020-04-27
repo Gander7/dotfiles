@@ -13,4 +13,5 @@ Personal config files to be used across computers and for new installs
   
 ## Issues I've faced
 Issue: Command not found ^M
+
 Resolve: Git config autocrlf is set to `input`
