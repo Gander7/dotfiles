@@ -2,9 +2,9 @@
 # Aliases
 
 # Listing
-#alias ls='ls --color=auto -ACF'
-#alias ll='ls --color=auto -laF'
-#alias la='ls -a'
+alias ls='ls --color=auto -ACF'
+alias ll='ls --color=auto -laF'
+alias la='ls -a'
 
 # Navigation
 alias ..='cd ..'
